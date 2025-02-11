@@ -1,0 +1,6 @@
+@WebVSLAPITraining_HostAddress = http://localhost:5144
+
+GET {{WebVSLAPITraining_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
