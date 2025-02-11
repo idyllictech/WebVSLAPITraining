@@ -14,7 +14,8 @@ builder.Services.AddOpenApi();
 builder.Services.AddDbContext<AppDbContext>(option => option.UseSqlite(
     builder.Configuration.GetConnectionString("Connection")));
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
+builder.Services.AddMediatR(cfg => 
+    cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 var app = builder.Build();
 
 app.UseExceptionHandler(_ => { });
