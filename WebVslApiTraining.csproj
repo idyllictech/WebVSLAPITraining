@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Domain\" />
     <Folder Include="Features\Category\CreateCategory\" />
     <Folder Include="Features\Product\DeleteProduct\" />
     <Folder Include="Features\Product\GetAllProduct\" />
