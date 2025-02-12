@@ -1,3 +1,4 @@
+using Mapster;
 using Microsoft.EntityFrameworkCore;
 using WebVslApiTraining.Exceptions;
 using WebVslApiTraining.Features.Product;
@@ -16,6 +17,7 @@ builder.Services.AddDbContext<AppDbContext>(option => option.UseSqlite(
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddMediatR(cfg => 
     cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
+TypeAdapterConfig.GlobalSettings.Scan(typeof(GetProductMappingConfig).Assembly);
 var app = builder.Build();
 
 app.UseExceptionHandler(_ => { });

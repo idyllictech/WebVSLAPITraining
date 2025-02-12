@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using WebVslApiTraining.Features.Domain;
 using WebVslApiTraining.Features.Product.CreateProduct;
+using WebVslApiTraining.Features.Product.DeleteProduct;
 using WebVslApiTraining.Features.Product.UpdateProduct;
 
 namespace WebVslApiTraining.Features.Product
@@ -19,6 +20,11 @@ namespace WebVslApiTraining.Features.Product
             productGroup.MapPut("/update", async (UpdateProductRequest product, ISender sender) =>
             {
                 var response = await sender.Send(new UpdateProductCommand(product));
+                return response.Success ? Results.Ok(response) : Results.BadRequest(response);
+            });
+            productGroup.MapDelete("/delete/{id}", async (int id, ISender sender) =>
+            {
+                var response = await sender.Send(new DeleteProductCommand(id));
                 return response.Success ? Results.Ok(response) : Results.BadRequest(response);
             });
             return productGroup;
