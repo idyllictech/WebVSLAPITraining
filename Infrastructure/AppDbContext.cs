@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebVslApiTraining.Domain;
+using WebVslApiTraining.Features.Domain;
 
 namespace WebVslApiTraining.Infrastructure
 {

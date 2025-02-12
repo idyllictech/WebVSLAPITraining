@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using WebVslApiTraining.Domain;
+using WebVslApiTraining.Features.Domain;
 using WebVslApiTraining.Features.Product.CreateProduct;
 using WebVslApiTraining.Features.Product.UpdateProduct;
 
